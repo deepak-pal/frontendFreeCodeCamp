@@ -1,21 +1,21 @@
-import { useState } from 'react';
 import './App.css';
+import Header from './containers/Header';
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  /*return (
+  //const [counter, setCounter] = useState(0);
+  return (
     <div className="App">
-     Hello
+    <Header></Header>
     </div>
-  );*/
-  const increment=()=>{
+  );
+  /*const increment=()=>{
 setCounter(prevCounter =>prevCounter +1)
   }
   return(
     <div>
       value:{counter} <button onClick={increment}>Increment</button>
     </div>
-  )
+  )*/
 }
 
 export default App;
