@@ -1,21 +1,23 @@
 import './App.css';
+import {BrowserRouter as Router,Routes, Route} from "react-router-dom";
 import Header from './containers/Header';
+import ProductListing from './containers/ProductListing';
+import ProductDetails from './containers/ProductDetails';
 
-function App() {
-  //const [counter, setCounter] = useState(0);
+function App() {  
   return (
     <div className="App">
-    <Header></Header>
+      <Router>
+        <Header/>
+        <Routes>
+        <Route path='/' element={<ProductListing/>}/>
+        <Route path='/product/:productId' element={ProductDetails}/>
+        <Route >404 not found</Route>
+        </Routes>
+      </Router>
+   
     </div>
-  );
-  /*const increment=()=>{
-setCounter(prevCounter =>prevCounter +1)
-  }
-  return(
-    <div>
-      value:{counter} <button onClick={increment}>Increment</button>
-    </div>
-  )*/
+  ); 
 }
 
 export default App;
